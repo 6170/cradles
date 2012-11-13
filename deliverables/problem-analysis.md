@@ -34,14 +34,14 @@ In Massachusetts all public school volunteers must pass a CORI background check,
 ### Security concerns
 
 ### User interfaces
-#### Volunteer Story
+##### Volunteer Story
 A volunteer registers for our application giving their location, interests and availibility. After this they will recieve email notifications alerting them of teachers who want their service. 
 
-#### Volunteer Wireframes
+##### Volunteer Wireframes
 ![Volunteer Wireframes](https://raw.github.com/6170/cradles/master/deliverables/images/volunteer_mockups.png)
-#### Teacher Story
+##### Teacher Story
 A teacher registers for our application listing their location. They use a search interface to find volunteers that are availible for their classroom. Once they have found a volunteer, they send a request for that volunteer to come in. After interacting with the volunteer, they are asked to rate the volunteer.
-#### Teacher Wireframes
+##### Teacher Wireframes
 
 
 
