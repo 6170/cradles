@@ -12,25 +12,37 @@ The only problem is that it is difficult to organize and train these volunteers.
 ##Domain
 ### Object model
 ![Object Model](http://www.gliffy.com/pubdoc/4068705/L.png)
+
+**Review** -- A form filled out by the teacher to rate a volunteer they have interacted with.  
+**Episode** -- A volunteering session
+
+
 ### Event model
-##### Regular Expression
-##### State Machine
-
-
-
-
-### Unusual requirements
-In Massachusetts all public school volunteers must pass a CORI background check, while outside the scope of our application it would be nice to make the background check process as easy as possible for all parties involved.
-
-### Key features
-- A volunteer profile page where prospective volunteers can list information about their location, interests and availibility.
-- A volunteer search page that allows teachers to search for the volunteer that they think would be right for their class.
-- A volunteer review page that allows teachers to leave reviews about volunteers that they have interacted with.
-- A favorites page where a teacher can view the availibility of there favorite volunteers.
+    Volunteer ::= (Register)(Accept Volunteering Session | Deny)*
+    Teacher ::= (Register)(Search for Volunteer | Review Volunteer | Request a specific volunteer | Favorite a Volunteer)*
 
 ##Behavior
 ### Feature descriptions
+- A volunteer profile page where prospective volunteers can list information about their location, interests and availibility.
+- A volunteer search page that allows teachers to search for the volunteer that they think would be right for their class.
+- A volunteer review page that allows teachers to leave reviews about volunteers that they have interacted with.
+- A favorites page where a teacher can view the availibility of their favorite volunteers.
+
+##### Unusual Requirements
+In Massachusetts all public school volunteers must pass a CORI background check, while outside the scope of our application it would be nice to make the background check process as easy as possible for all parties involved.
+
 ### Security concerns
+
 ### User interfaces
-####User Mockups
-![User Mockups](link)
+#### Volunteer Story
+A volunteer registers for our application giving their location, interests and availibility. After this they will recieve email notifications alerting them of teachers who want their service. 
+
+#### Volunteer Wireframes
+![Volunteer Wireframes]()
+#### Teacher Story
+A teacher registers for our application listing their location. They use a search interface to find volunteers that are availible for their classroom. Once they have found a volunteer, they send a request for that volunteer to come in. After interacting with the volunteer, they are asked to rate the volunteer.
+#### Teacher Wireframes
+
+
+
+
