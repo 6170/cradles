@@ -21,3 +21,9 @@ Create a application to help teachers find volunteers for their classrooms.
 ### Minimal Viable Product
 Contains All pages enumerated in the problem analysis
 
+##Team Contract
+
+- We will both put equal effort into this project and attempt to work in the same location.
+- We will meet weekly at informal times (we live in the same building so this is easy).
+- We will hold each other accountable for the quality of our work.
+- Task management will be handled via github issues.
