@@ -32,6 +32,9 @@ The only problem is that it is difficult to organize and train these volunteers.
 In Massachusetts all public school volunteers must pass a CORI background check, while outside the scope of our application it would be nice to make the background check process as easy as possible for all parties involved.
 
 ### Security concerns
+**Requirements:**
+1. A user's personal information should never be revealed except to those with access (e.g. teachers in their area)
+2. Registering as a teacher should require external validation.
 
 ### User interfaces
 ##### Volunteer Story
