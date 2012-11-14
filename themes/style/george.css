@@ -5254,8 +5254,26 @@ a.badge:hover {
 .affix {
   position: fixed;
 }
+.center {
+  text-align: center;
+}
+html {
+  -webkit-user-select: none;
+  /* Chrome all / Safari all */
+
+  -moz-user-select: none;
+  /* Firefox all */
+
+  -ms-user-select: none;
+  /* IE 10+ */
+
+  /* No support for these yet, use at own risk */
+
+  -o-user-select: none;
+  user-select: none;
+}
 .deck-container {
-  font-size: 1.75em;
+  font-size: 1.5em;
   background: url(backgrounds/bedge_grunge.png);
 }
 .deck-container .slide ul {
@@ -5276,4 +5294,43 @@ a.badge:hover {
 .deck-container .slide h2 {
   color: #0b7495;
   border-bottom: 0;
+}
+.deck-container .slide-source {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 20px;
+  font-size: .75em;
+}
+.deck-container .slide-source a:hover {
+  text-decoration: none;
+}
+.deck-container .slide-source a:before {
+  content: "Source: ";
+  color: #999999;
+}
+.percentage {
+  overflow: hidden;
+  height: 100px;
+}
+.percentage .bar {
+  font-size: 90px;
+  line-height: 96px;
+  padding: 0 10px;
+  color: white;
+  text-align: left;
+  background-color: #f89406;
+}
+.percentage .bar-right {
+  text-align: left;
+  border-top: 5px solid #08455f;
+  border-right: 5px solid #08455f;
+  border-bottom: 5px solid #08455f;
+}
+.percentage .bar-right small {
+  color: #0b7495;
+  font-size: 20px;
+}
+.percentage p {
+  margin-bottom: 0;
 }

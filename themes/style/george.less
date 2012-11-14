@@ -1,6 +1,21 @@
 @import "bootstrap/bootstrap.less";
+
+.center { text-align: center; }
+
+
+html {
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+
+  /* No support for these yet, use at own risk */
+  -o-user-select: none;
+  user-select: none;          
+}
+
+
 .deck-container {
-  font-size:1.75em;
+  font-size:1.5em;
   background: url(backgrounds/bedge_grunge.png);
 
  
@@ -14,15 +29,59 @@
     }
 
     h1 {
-      color:#08455f;
+      color:@blueDark;
     }
 
     h2 {
-      color:#0b7495;
+      color:@blue;
       border-bottom:0;
     }
 
   }
+  .slide-source {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 20px;
+    font-size: .75em;
+    a:hover {
+      text-decoration: none;
+    }
+    a:before { 
+      content: "Source: ";
+      .muted;
+    }
+  }
+
+
 }
 
+.percentage {
+  overflow: hidden;
+  height: 100px;
+  .bar {
+    font-size: 90px;
+    line-height: 96px;
+    padding: 0 10px;
+    color: white;
+    text-align: left;
+    background-color: @orange;
+  }
+  .bar-right {
+    text-align: left;
+    small {
+      color:@blue;
+      font-size: 20px;
+    }
+
+    border-top: 5px solid @blueDark;
+    border-right: 5px solid @blueDark;
+    border-bottom: 5px solid @blueDark;
+    
+  }
+  p {
+    margin-bottom: 0;
+  }
+  
+}
 
