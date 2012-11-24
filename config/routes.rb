@@ -1,6 +1,6 @@
 Cradles::Application.routes.draw do
+  root :to => 'home#index'
   devise_for :teachers
-
   devise_for :volunteers
 
   # The priority is based upon order of creation:
