@@ -1,4 +1,8 @@
 Cradles::Application.routes.draw do
+  devise_for :teachers
+
+  devise_for :volunteers
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
