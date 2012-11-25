@@ -1,4 +1,12 @@
-<ul class="nav nav-pills">
-  <li><a href="#">Teacher</a></li>
-  <li><a href="#">Classroom Volunteers</a></li>
-</ul>
+<div class="row center">
+  <div class="span6">
+    <h1>Teacher</h1>
+    <%= link_to "Teacher Sign in", new_session_path('teacher'), :class => 'btn btn-success btn-large btn-block' %>
+    <%= link_to "Teacher Registration", new_registration_path('teacher'), :class => 'btn btn-primary btn-large btn-block' %>
+  </div>
+  <div class="span6">
+    <h1>Classroom Volunteer</h1>
+    <%= link_to "Volunteer Sign in", new_session_path('volunteer'), :class => 'btn btn-success btn-large btn-block' %>
+    <%= link_to "Volunteer Registration", new_registration_path('volunteer'), :class => 'btn btn-primary btn-large btn-block' %>
+  </div>
+</div>
