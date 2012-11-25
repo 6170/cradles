@@ -8,8 +8,19 @@
     <%= f.input :last_name %>
     <%= f.input :interests, :as => :text, :input_html => { :rows => '5' } %>
   </div>
+  <p>Please select the schools from the map below that you can volunteer at</p>
+  
+  <div class="js-map-input">
+    <div id="map-box"></div>
+    <input type="hidden" value='' name='schools'>
+    <div class="control-group">
+      <label class="control-label">Selected Schools</label>
+      <div class="controls js-items-holder"></div>
+    </div>
+  </div>
+
 
   <div class="form-actions">
-    <%= f.button :submit, "Complete" %>
+    <%= f.button :submit, "Complete", :class => 'btn-primary btn-large' %>
   </div>
 <% end %>

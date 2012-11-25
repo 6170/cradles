@@ -5,4 +5,12 @@ $serifFontFamily:  "Rokkitt", Georgia, "Times New Roman", Times, serif;
 @import "bootstrap-responsive";
 @import 'font-awesome';
 
+.multiple-input {
+  padding: 6px inherit;
+  .remove {
+    color: $red;
+  }
+}
+
+
 

@@ -1,3 +1,5 @@
+GOOGLE_API_KEY = 'AIzaSyCM7JCAgxedvS2mQiWZXHQ8gFgVVbnb2Yw'
+
 window.app =
   Models: {}
   Views: {}
