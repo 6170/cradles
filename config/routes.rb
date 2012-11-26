@@ -3,6 +3,11 @@ Cradles::Application.routes.draw do
   devise_for :teachers
   devise_for :volunteers
   resources :teachers
+  resources :search do
+    collection do
+      get 'autocomplete_school_names'
+    end
+  end
   resources :volunteers do
     collection do
       get 'profile'

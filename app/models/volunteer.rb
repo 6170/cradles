@@ -6,9 +6,17 @@ class Volunteer < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :interests
   validates_presence_of :first_name, :last_name, :interests, :on => :update
 
+  searchable do
+    string :first_name
+    string :last_name
+    string :schools, :multiple => true do
+      schools.map { |school| school.name }
+    end
+  end
+
   def set_school_list(school_list)
     schools.clear()
-    #create association
+
     for school_name in school_list
       school = School.find_or_create_by_name(school_name)
       schools << school

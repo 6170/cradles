@@ -6,3 +6,6 @@
 
 ##Project Setup
 1. Create ```cradles``` user for your postgres db.
+
+##Development
+1. Run ```bundle exec rake sunspot:solr:start``` to start solr

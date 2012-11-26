@@ -11,12 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121125235336) do
+ActiveRecord::Schema.define(:version => 20121126053723) do
 
   create_table "schools", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                                 :null => false
+    t.datetime "updated_at",                                 :null => false
+    t.string   "zipcode"
+    t.string   "school_type"
+    t.string   "location"
+    t.decimal  "lat",         :precision => 10, :scale => 6
+    t.decimal  "lng",         :precision => 10, :scale => 6
   end
 
   create_table "schools_volunteers", :id => false, :force => true do |t|
@@ -39,6 +44,9 @@ ActiveRecord::Schema.define(:version => 20121125235336) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.string   "first_name"
+    t.string   "last_name"
+    t.integer  "school_id"
   end
 
   add_index "teachers", ["email"], :name => "index_teachers_on_email", :unique => true

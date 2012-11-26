@@ -4,6 +4,8 @@ gem 'rails', '3.2.8'
 
 group :development, :test do
   gem 'debugger'
+  gem 'sunspot_solr'
+  gem 'progress_bar'
 end
 
 gem 'pg'
@@ -27,3 +29,4 @@ gem 'cancan'
 gem 'rolify'
 gem 'simple_form'
 gem 'gon'
+gem 'sunspot_rails'
