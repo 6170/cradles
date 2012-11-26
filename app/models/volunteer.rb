@@ -1,4 +1,5 @@
 class Volunteer < ActiveRecord::Base
+  has_and_belongs_to_many :schools
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -7,5 +8,5 @@ class Volunteer < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
-  # attr_accessible :title, :body
+  attr_accessible :first_name, :last_name, :interests
 end

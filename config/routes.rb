@@ -6,6 +6,7 @@ Cradles::Application.routes.draw do
   resources :volunteers do
     collection do
       get 'profile'
+      post 'update_profile'
     end
   end
 end

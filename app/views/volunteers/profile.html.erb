@@ -1,6 +1,6 @@
 <h3>Welcome, Please complete your profile.</h3>
 
-<%= simple_form_for(current_volunteer, :url => '', :html => { :method => :post, :class => 'form-horizontal' }) do |f| %>
+<%= simple_form_for(current_volunteer, :url => url_for(:action => 'update_profile', :controller => 'volunteers'), :html => { :method => :post, :class => 'form-horizontal' }) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
@@ -12,7 +12,7 @@
   
   <div class="js-map-input">
     <div id="map-box"></div>
-    <input type="hidden" value='' name='schools'>
+    
     <div class="control-group">
       <label class="control-label">Selected Schools</label>
       <div class="controls js-items-holder"></div>
