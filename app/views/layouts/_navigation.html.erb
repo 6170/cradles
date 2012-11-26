@@ -5,6 +5,7 @@
     <li><%= link_to(destroy_teacher_session_path, :method=>'delete') do %><i class="icon-signout"></i> Logout<% end %></li>
   <% end %>
   <% if volunteer_signed_in? %>
+    <li><%= link_to :controller => "volunteers", :action => "profile" do %><i class="icon-cogs"></i> Update Profile<% end %></li>
     <li><%= link_to(edit_volunteer_registration_path) do %><i class="icon-cogs"></i> Edit Account<% end %></li>
     <li><%= link_to(destroy_volunteer_session_path, :method=>'delete') do %><i class="icon-signout"></i> Logout<% end %></li>
   <% end %>

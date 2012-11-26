@@ -1,12 +1,17 @@
 class Volunteer < ActiveRecord::Base
   has_and_belongs_to_many :schools
-  # Include default devise modules. Others available are:
-  # :token_authenticatable, :confirmable,
-  # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
-  attr_accessible :first_name, :last_name, :interests
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :interests
+  validates_presence_of :first_name, :last_name, :interests, :on => :update
+
+  def set_school_list(school_list)
+    schools.clear()
+    #create association
+    for school_name in school_list
+      school = School.find_or_create_by_name(school_name)
+      schools << school
+    end
+  end
 end

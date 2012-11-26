@@ -9,6 +9,10 @@
     <%= f.input :interests, :as => :text, :input_html => { :rows => '5' } %>
   </div>
   <p>Please select the schools from the map below that you can volunteer at</p>
+  <% for error_msg in current_volunteer.errors[:schools] %>
+    <p class="text-error"><%= error_msg %></p>
+  <% end %>
+  
   
   <div class="js-map-input">
     <div id="map-box"></div>

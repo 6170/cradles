@@ -1,6 +1,7 @@
 class VolunteersController < ApplicationController
   before_filter :authenticate_volunteer!
   before_filter :profile_complete?, :except =>['profile', 'update_profile']
+  before_filter :attach_schools
   
   def index
     respond_to do |format|
@@ -9,29 +10,22 @@ class VolunteersController < ApplicationController
   end
 
   def profile
-    #attach schools to the js context so they are rendered
-    gon.schools = current_volunteer.schools.pluck(:name).uniq
-    
     respond_to do |format|
       format.html
     end
   end
 
   def update_profile
-    #remove association
-    current_volunteer.schools.clear()
-    #create association
-    for school_name in params[:schools]
-      school = School.find_or_create_by_name(school_name)
-      current_volunteer.schools << school
-    end
-    
-    #update user info
+    current_volunteer.set_school_list(params[:schools])
+  
     respond_to do |format|
       if current_volunteer.update_attributes(params[:volunteer])
-        format.html { redirect_to :action => 'profile', notice: 'Profile was successfully updated.' }
+        current_volunteer.profile_complete = true
+        current_volunteer.save()
+        flash[:notice] = 'Profile was successfully updated.'
+        format.html { redirect_to :action => 'index' }
       else
-        format.html { render action: "profile", notice: 'Please fix' }
+        format.html { render action: "profile" }
       end
     end
   end
@@ -42,5 +36,10 @@ class VolunteersController < ApplicationController
       unless current_volunteer.profile_complete
         redirect_to :action => 'profile'
       end
+    end
+
+    def attach_schools
+      #attach schools to the js context so they are rendered
+      gon.schools = current_volunteer.schools.pluck(:name).uniq
     end
 end

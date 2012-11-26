@@ -5,8 +5,21 @@ $serifFontFamily:  "Rokkitt", Georgia, "Times New Roman", Times, serif;
 @import "bootstrap-responsive";
 @import 'font-awesome';
 
+.text-warning { color: $warningText; }
+a.text-warning:hover { color: darken($warningText, 10%); }
+
+.text-error { color: $errorText; }
+a.text-error:hover { color: darken($errorText, 10%); }
+
+.text-info { color: $infoText; }
+a.text-info:hover { color: darken($infoText, 10%); }
+
+.text-success { color: $successText; }
+a.text-success:hover { color: darken($successText, 10%); }
+
 .multiple-input {
   padding: 6px inherit;
+  margin: 0;
   .remove {
     color: $red;
   }
