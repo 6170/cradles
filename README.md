@@ -8,4 +8,6 @@
 1. Create ```cradles``` user for your postgres db.
 
 ##Development
-1. Run ```bundle exec rake sunspot:solr:start``` to start solr
+1. Run ```rake sunspot:solr:start``` to start solr
+2. Run ```rake load_schools``` to load seed list of boston schools
+3. Run ```rake sunspot:solr:reindex``` to reindex all of the data (its autoupdated while the server is running).

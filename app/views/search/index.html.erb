@@ -2,24 +2,25 @@
 <div class="row">
   <div class="span8">
     <p><%= pluralize(@volunteers.results.total_count, 'volunteer') %> available at <strong><%= current_teacher.school_name %></strong></p>
-    <% for volunteer in @volunteers.results %>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Interests</th>
-          </tr>
-        </thead>
-        <tbody>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Interests</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for volunteer in @volunteers.results %>
           <tr>
             <td><%= volunteer.first_name %></td>
             <td><%= volunteer.last_name %></td>
             <td><%= volunteer.interests %></td>
           </tr>
-        </tbody>
-      </table>
-    <% end %>
+        <% end %>
+      </tbody>
+    </table>
+   
   </div>
   <div class="span4">
     <h3>Add Filters</h3>
