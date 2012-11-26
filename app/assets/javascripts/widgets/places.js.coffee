@@ -1,5 +1,6 @@
 class Place extends Backbone.View
   item_tpl: "<p class='multiple-input'><%=name %>  <a href='#' class='remove' data-name='<%=name %>'><i class='icon-remove'></i></a><input type='hidden' value='<%=name %>' name='schools[]'></p>"
+  
   marker_cache: {}
   selected_schools: []
   marker_icon:

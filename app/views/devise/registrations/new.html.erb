@@ -8,7 +8,7 @@
   <%= f.input :password_confirmation, :required => true %>
   
   <% if resource_name.to_s == 'teacher' %>
-    <%= f.input :school, :input_html => { :class => 'typeahead', :'data-url'=>url_for(autocomplete_school_names_search_index_path) } %>
+    <%= f.input :school, :input_html => { :class => 'typeahead', :'data-url'=>url_for(autocomplete_school_names_search_index_path), :'data-field' => 'name' } %>
   <% end %>
   
   <div class="form-actions">
