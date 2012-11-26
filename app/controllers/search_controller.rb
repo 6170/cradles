@@ -6,7 +6,7 @@ class SearchController < ApplicationController
         with(:name_lower).starting_with(params[:query].downcase)
       end
       if params[:lat] and params[:lng]
-        with(:coordinates).near(params[:lat], params[:lng])
+        with(:coordinates).near(params[:lat], params[:lng], :boost => 2, :precision => 2)
       end
       paginate(:page => 1, :per_page => 100)
     
@@ -15,12 +15,14 @@ class SearchController < ApplicationController
   end
 
   def index
-    @volunteer_search = Volunteer.search do
-      facet :schools
+    
+    @volunteers = Volunteer.search do
+      with(:schools, current_teacher.school_name)
     end
     
     respond_to do |format|
       format.html
+      format.json { render json: @volunteers.results }
     end
   end
 

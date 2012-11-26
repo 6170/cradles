@@ -5,5 +5,4 @@ $(document).ready ->
       field = @$element.data 'field'
 
       $.get url, {query: query}, (data) ->
-        console.log field
         process _.pluck data, field

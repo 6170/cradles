@@ -36,8 +36,8 @@ class Place extends Backbone.View
     @item_holder = @$ '.js-items-holder'
     
     #center the map on the users location
-    client_location = google.loader.ClientLocation
-    @center = new google.maps.LatLng(client_location.latitude, client_location.longitude)
+    @client_location = google.loader.ClientLocation
+    @center = new google.maps.LatLng(@client_location.latitude, @client_location.longitude)
     
     @map = new google.maps.Map @$el.find('#map-box').get(0),
       mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -46,29 +46,19 @@ class Place extends Backbone.View
 
     @search()
 
+
     #show user's existing schools
     _.each @options.schools, @add_school
 
   search: ->
-    request =
-      location: @center
-      radius: 50000
-      types: ["school"]
-      keyword: 'Public School'
-    service = new google.maps.places.PlacesService(@map)
-    service.nearbySearch request, @callback
-  
-
-  callback: (results, status) =>
-    if status is google.maps.places.PlacesServiceStatus.OK
-      for place in results
+    $.get "/search/autocomplete_school_names?lat=#{@client_location.latitude}&lng=#{@client_location.longitude}", (data) =>
+      for place in data
         @createMarker place
-
 
   createMarker: (place) =>
     marker = new google.maps.Marker
       map: @map
-      position: place.geometry.location
+      position: new google.maps.LatLng(place.lat, place.lng)
       title: place.name
       icon: @marker_icon.default
 

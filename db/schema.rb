@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121126053723) do
+ActiveRecord::Schema.define(:version => 20121126073008) do
 
   create_table "schools", :force => true do |t|
     t.string   "name"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(:version => 20121126053723) do
     t.string   "first_name"
     t.string   "last_name"
     t.integer  "school_id"
+    t.string   "school_name"
   end
 
   add_index "teachers", ["email"], :name => "index_teachers_on_email", :unique => true
