@@ -2,6 +2,7 @@ class VolunteersController < ApplicationController
   before_filter :authenticate_volunteer!
   before_filter :profile_complete?, :except =>['profile', 'update_profile']
   before_filter :attach_schools
+  before_filter :attach_interests
   
   def index
     respond_to do |format|
@@ -41,5 +42,8 @@ class VolunteersController < ApplicationController
     def attach_schools
       #attach schools to the js context so they are rendered
       gon.schools = current_volunteer.schools.pluck(:name).uniq
+    end
+    def attach_interests
+      @interests = Interest.all()
     end
 end

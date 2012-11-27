@@ -6,7 +6,20 @@
   <div class="form-inputs">
     <%= f.input :first_name %>
     <%= f.input :last_name %>
-    <%= f.input :interests, :as => :text, :input_html => { :rows => '5' } %>
+    <label class="control-label">Select Interests</label>
+    <div class="control-group">
+      <% @interests.each_slice(4) do |slice| -%>
+      <div class="controls span2" style="margin-left:6%;">
+        <% slice.each do |interest| -%>
+          <label class="checkbox">
+            <%= check_box_tag "volunteer[interest_id][]", interest.id, current_volunteer.interests.include?(interest) %>
+            <%= interest.name %>
+            <!-- <input type="checkbox" value="<%= interest.id %>" id="<%= interest.id %>"> <%= interest.name %> -->
+          </label>
+        <% end -%>
+      </div>
+      <% end -%>
+    </div>
   </div>
   <p>Please select the schools from the map below that you can volunteer at</p>
   <% for error_msg in current_volunteer.errors[:schools] %>
@@ -28,3 +41,4 @@
     <%= f.button :submit, "Complete", :class => 'btn-primary btn-large' %>
   </div>
 <% end %>
+
