@@ -163,6 +163,7 @@ DEPENDENCIES
   font-awesome-sass-rails
   gon
   jquery-rails
+  json
   pg
   progress_bar
   rails (= 3.2.8)
