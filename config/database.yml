@@ -14,9 +14,11 @@ test:
   password:
 
 production:
-  adapter: postgresql
+  adapter:  postgresql
   encoding: unicode
-  database: cradles_production
   pool: 5
-  username: cradles
-  password:
+  database: d14ju6c6k6cqp0
+  username: ohmbzgyldmigwi
+  password: BvrL3t37swo-RPq_-G4eq7GsGK
+  host: ec2-54-243-223-143.compute-1.amazonaws.com
+  port: 5432

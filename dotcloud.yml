@@ -1,0 +1,9 @@
+www:
+  type: ruby
+
+data:
+  type: postgresql
+
+search:
+  type: solr
+  approot: solr/conf

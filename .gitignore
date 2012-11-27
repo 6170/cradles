@@ -13,3 +13,5 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+/solr/pids/development/sunspot-solr-development.pid
