@@ -12,7 +12,7 @@
       <div class="controls span2" style="margin-left:6%;">
         <% slice.each do |interest| -%>
           <label class="checkbox">
-            <%= check_box_tag "volunteer[interest_id][]", interest.id, current_volunteer.interests.include?(interest) %>
+            <%= check_box_tag "volunteer[interest_ids][]", interest.id, current_volunteer.interests.include?(interest) %>
             <%= interest.name %>
             <!-- <input type="checkbox" value="<%= interest.id %>" id="<%= interest.id %>"> <%= interest.name %> -->
           </label>

@@ -18,7 +18,7 @@ class VolunteersController < ApplicationController
 
   def update_profile
     current_volunteer.set_school_list(params[:schools])
-  
+    params[:volunteer][:interest_ids] ||= []
     respond_to do |format|
       if current_volunteer.update_attributes(params[:volunteer])
         current_volunteer.profile_complete = true
