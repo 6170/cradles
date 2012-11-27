@@ -18,5 +18,7 @@ production:
   encoding: unicode
   database: cradles_production
   pool: 5
-  username: cradles
-  password:
+  username: root
+  password: UOMKgrM5R6zK66hN8IF0
+  port: 37801
+  host: cradles-george.azva.dotcloud.net
