@@ -1,9 +1,10 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
-gem 'sunspot_solr'
+
 group :development, :test do
   gem 'debugger'
+  gem 'sunspot_solr'
   gem 'progress_bar'
 end
 
