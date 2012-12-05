@@ -1,0 +1,40 @@
+<div class="row">
+  <h1>Your Conversations</h1>
+  <table id="conversations" class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Last Message Date</th>
+        <th>Name</th>
+        <th>&nbsp;</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if @conversations.each do |conversation| %>
+      <% if teacher_signed_in? and !conversation.t_read or volunteer_signed_in? and !conversation.v_read%>
+      <tr class="error">
+      <% else %>
+      <tr>
+      <% end %>
+        <td><%= conversation.messages.last.created_at.strftime("%B %d, %Y") if conversation.messages.last %></td>
+        <td><%= conversation.volunteer.email %></td>
+        <td><%= conversation.messages.last.content[0..50]+'...' if conversation.messages.last %></td>
+        <td><a href="/conversations/<%= conversation.id %>">View</a></td>
+      </tr>
+      <% end.empty? %>
+        <tr><td><h3>You have no messages. </h3></td><td>&nbsp;</td><td>&nbsp;</td></tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#conversations tr').click(function() {
+        var href = $(this).find("a").attr("href");
+        if(href) {
+            window.location = href;
+        }
+    });
+
+});
+</script>
