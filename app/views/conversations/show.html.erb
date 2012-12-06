@@ -2,9 +2,9 @@
   <div class="offset chatArea">
     <% if @messages.each do |message| %>
       <% if message.from == @from %>
-        <div class="bubbledRight"><%= message.content %><br><small><%= message.created_at.strftime("%B %d, %Y") %></small></div>
+        <div class="bubbledRight"><small><%= message.from %></small><br><%= message.content %><br><small><%= message.created_at.strftime("%B %d, %Y") %></small></div>
       <% else %>
-        <div class="bubbledLeft"><%= message.content %><br><small><%= message.created_at.strftime("%B %d, %Y") %></small></div>
+        <div class="bubbledLeft"><small><%= message.from %></small><br><%= message.content %><br><small><%= message.created_at.strftime("%B %d, %Y") %></small></div>
       <% end %>
     <% end.empty? %>
     <h1>No Messages</h1>

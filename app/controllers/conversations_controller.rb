@@ -10,6 +10,7 @@ class ConversationsController < ApplicationController
     else
       @conversations = []
     end
+    @conversations = @conversations.select { |conversation| !conversation.messages.empty? }
     respond_to do |format|
       format.html 
       format.json { render json: {}}
