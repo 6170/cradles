@@ -1,5 +1,5 @@
 class NotificationMailer < ActionMailer::Base
-  default from: "from@example.com"
+  default from: "no-reply@cradles.herokuapps.com"
   def notification(message)
   	@message = message
   	@from = "no-reply@cradles.herokuapps.com"
@@ -8,7 +8,7 @@ class NotificationMailer < ActionMailer::Base
    	@message = message
 	@sent_on = Time.now
 	@headers = {}
-  	mail(:to => @message.to) do |format|
+  	mail(:to => @message.to, :from => @from, :subject => @subject) do |format|
       format.html
     end
   end
