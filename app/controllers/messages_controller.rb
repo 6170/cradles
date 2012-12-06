@@ -19,6 +19,7 @@ class MessagesController < ApplicationController
     @message.was_read = false
     respond_to do |format|
       if @message.save
+        NotificationMailer.notification(@message).deliver
         if teacher_signed_in?
           @message.conversation.update_attributes(:v_read => false)
           @message.conversation.save
