@@ -5,6 +5,6 @@ class Message < ActiveRecord::Base
   after_create :notify
 
   def notify
-    NotificationMailer::deliver_notification(self)
+    NotificationMailer.deliver_notification(self)
   end
 end

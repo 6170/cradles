@@ -5,5 +5,7 @@ class NotificationMailer < ActionMailer::Base
     @recipients = message.to     
     @subject = "#{message.to} has sent you a message on VolunteerNet"     
    	@body["message"] = message
+	@sent_on = Time.now
+	@headers = {}
   end
 end
