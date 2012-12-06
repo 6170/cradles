@@ -1,4 +1,4 @@
-<h1>Hey <%= @message.to %>,</h1>
-<br><br><br><br>
-<p>You have just recieved a message from <%= @message.from %> click <%= link_to "here", :controller => "conversations", :action => "show", :id => @message.conversation.id %> to see it.<br>
+<h3>Hey <%= @message.to %>,</h3>
+<br>
+<p>You have just recieved a message from <%= @message.from %> click <a href="http://cradles.herokuapp.com/conversations/<%= @message.conversation.id %>">here</a> to see it.<br>
 Thanks!</p>
