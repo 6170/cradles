@@ -14,4 +14,6 @@ Cradles::Application.routes.draw do
       post 'update_profile'
     end
   end
+  resources :conversations
+  resources :messages
 end

@@ -1,6 +1,7 @@
 class Volunteer < ActiveRecord::Base
   has_and_belongs_to_many :schools
   has_and_belongs_to_many :interests
+  has_and_belongs_to_many :conversations
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable

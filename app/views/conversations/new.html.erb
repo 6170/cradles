@@ -1,0 +1,19 @@
+<%= simple_form_for(@message, :html => {:class => 'form-horizontal' }) do |f| %>
+  <legend>Send Message</legend>
+  <%= f.error_notification %>
+  <div class="control-group">
+    <label class="integer control-label" for="message_to">To</label>
+    <div class="controls"><%= @volunteer.email %>
+    </div>
+  </div>
+  <div class="control-group">
+    <label class="integer control-label" for="message_to">From</label>
+    <div class="controls"><%= @teacher.email %>
+    </div>
+  </div>
+  <%= f.input :content, :required => true %>
+  
+  <div class="form-actions">
+    <%= f.button :submit, "Send Message", :class => 'btn-primary btn-large' %>
+  </div>
+<% end %>

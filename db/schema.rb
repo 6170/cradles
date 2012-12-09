@@ -11,7 +11,26 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121127030359) do
+ActiveRecord::Schema.define(:version => 20121205003525) do
+
+  create_table "conversations", :force => true do |t|
+    t.integer  "volunteer_id"
+    t.integer  "teacher_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.boolean  "v_read"
+    t.boolean  "t_read"
+  end
+
+  create_table "conversations_teachers", :id => false, :force => true do |t|
+    t.integer "conversation_id"
+    t.integer "teacher_id"
+  end
+
+  create_table "conversations_volunteers", :id => false, :force => true do |t|
+    t.integer "conversation_id"
+    t.integer "volunteer_id"
+  end
 
   create_table "interests", :force => true do |t|
     t.string   "name"
@@ -25,6 +44,16 @@ ActiveRecord::Schema.define(:version => 20121127030359) do
   end
 
   add_index "interests_volunteers", ["interest_id", "volunteer_id"], :name => "index_interests_volunteers_on_interest_id_and_volunteer_id"
+
+  create_table "messages", :force => true do |t|
+    t.text     "content"
+    t.string  "from"
+    t.string  "to"
+    t.integer  "conversation_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.boolean  "was_read"
+  end
 
   create_table "schools", :force => true do |t|
     t.string   "name"

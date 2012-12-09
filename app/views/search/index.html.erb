@@ -1,4 +1,3 @@
-
 <div class="row">
   <div class="span8">
     <p><%= pluralize(@volunteers.results.total_count, 'volunteer') %> available at <strong><%= current_teacher.school_name %></strong></p>
@@ -12,12 +11,13 @@
         </tr>
       </thead>
       <tbody>
-        <% for volunteer in @volunteers.results %>
+        <% @volunteers.results.each do |volunteer| %>
           <tr>
             <td><%= volunteer.first_name %></td>
             <td><%= volunteer.last_name %></td>
             <td><%= volunteer.email %></td>
             <td><%= volunteer.interests.map(&:name).join(", ") %></td>
+            <td><%= link_to "Message Volunteer", :controller => "conversations", :action => "show", :id => Conversation.find_or_create_by_teacher_id_and_volunteer_id(:teacher_id => current_teacher.id, :volunteer_id => volunteer.id).id %></td>
           </tr>
         <% end %>
       </tbody>
