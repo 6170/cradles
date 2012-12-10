@@ -1,17 +1,18 @@
-<div class="container">
+<div class="container well">
   <!-- Main hero unit for a primary marketing message or call to action -->
-  <div class="hero-unit">
-    <h1 class="front-page">Volunteer Today!</h1>
-    <img src="http://www.bpef-online.org/wp-content/uploads/2009/11/Volunteer-with-students.jpg" class="front-page">
-    <p>Make a difference in a child's life today. Volunteer to help out at a local school. This applications is designed to help you connect with teachers at local schools so you can start helping faster!</p>
-    <div class="front-page">
-      <p>
-        <%= link_to "Teacher Registration", new_registration_path('teacher'), :class => 'front-page-button btn btn-primary btn-large' %>
-        <%= link_to "Teacher Sign in", new_session_path('teacher'), :class => 'front-page-button btn btn-primary btn-large' %>
-        <br>
-        <%= link_to "Volunteer Registration", new_registration_path('volunteer'), :class => 'front-page-button btn btn-primary btn-large' %>
-        <%= link_to "Volunteer Sign in", new_session_path('volunteer'), :class => 'front-page-button btn btn-primary btn-large' %>
-      </p>
-    </div>
+
+  <h1>Volunteer Today!</h1>
+  <img src="http://www.bpef-online.org/wp-content/uploads/2009/11/Volunteer-with-students.jpg" class='thumbnail front-page'>
+  <h3>Make a difference in a child's life today. Volunteer to help out at a local school. This applications is designed to help you connect with teachers at local schools so you can start helping faster!</h3>
+
+
+  <div class="row margin-bottom-large">
+    <div class="span6"><%= link_to "Teacher Registration", new_registration_path('teacher'), :class => 'btn btn-success btn-large btn-block' %></div>
+    <div class="span6"><%= link_to "Teacher Sign in", new_session_path('teacher'), :class => 'btn btn-large btn-block' %></div>
   </div>
+  <div class="row">
+    <div class="span6"><%= link_to "Volunteer Registration", new_registration_path('volunteer'), :class => 'btn btn-success btn-large btn-block' %></div>
+    <div class="span6"><%= link_to "Volunteer Sign in", new_session_path('volunteer'), :class => 'btn btn-large btn-block' %></div>
+  </div>
+
 </div>
