@@ -88,8 +88,10 @@ class ConversationsController < ApplicationController
 
   private
     def check_volunteer_has_profile
-      unless current_volunteer.profile_complete or teacher_signed_in?
-        redirect_to :action => 'profile', :controller => 'volunteers'
+      if current_volunteer
+        unless current_volunteer.profile_complete or teacher_signed_in?
+          redirect_to :action => 'profile', :controller => 'volunteers'
+        end
       end
     end
 end
