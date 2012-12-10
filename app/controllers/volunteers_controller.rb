@@ -24,7 +24,7 @@ class VolunteersController < ApplicationController
         current_volunteer.profile_complete = true
         current_volunteer.save()
         flash[:notice] = 'Profile was successfully updated.'
-        format.html { redirect_to :action => 'index' }
+        format.html { redirect_to :action => 'index', :controller => 'conversations' }
       else
         format.html { render action: "profile" }
       end

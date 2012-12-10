@@ -1,6 +1,7 @@
 class ConversationsController < ApplicationController
   before_filter :authenticate_user!
   before_filter :current_user
+  before_filter :check_volunteer_has_profile
 
   def index
     if teacher_signed_in?
@@ -84,5 +85,14 @@ class ConversationsController < ApplicationController
   def current_user
     @current_user = current_volunteer || current_teacher
   end
+
+  private
+    def check_volunteer_has_profile
+      if current_volunteer
+        unless current_volunteer.profile_complete or teacher_signed_in?
+          redirect_to :action => 'profile', :controller => 'volunteers'
+        end
+      end
+    end
 end
 

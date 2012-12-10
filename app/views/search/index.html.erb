@@ -26,5 +26,15 @@
   </div>
   <div class="span4">
     <h3>Add Filters</h3>
+    
+      <% for row in @volunteers.facet(:interests).rows %>
+        <% if params[:interests].blank? %>
+          <% link_to row.value, :interests => row.value %>
+        <% else %>
+          <% link_to "remove", :department => nil %>
+        <% end %>
+        
+      <% end %>
+
   </div>
 </div>

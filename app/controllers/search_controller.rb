@@ -18,6 +18,8 @@ class SearchController < ApplicationController
     
     @volunteers = Volunteer.search do
       with(:schools, current_teacher.school_name)
+      facet :interests
+      with(:interests, params[:interests]) if params[:interests].present?
     end
     
     respond_to do |format|
