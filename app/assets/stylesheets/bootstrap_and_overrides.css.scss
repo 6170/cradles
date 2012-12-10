@@ -24,6 +24,48 @@ a.text-success:hover { color: darken($successText, 10%); }
     color: $red;
   }
 }
+.popover {
+  background-color: black;
+  z-index: 1060;
+}
+.popover.bottom .arrow {
+  border-bottom-color: black;
+}
+
+.popover-inner {
+  padding: 3px;
+  overflow: hidden;
+  background: black;
+  background: rgba(0, 0, 0, 0.8);
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+
+}
+.popover-title {
+  padding: 9px 15px;
+  line-height: 1;
+  background-color: whiteSmoke;
+  border-bottom: 1px solid #EEE;
+  -webkit-border-radius: 3px 3px 0 0;
+  -moz-border-radius: 3px 3px 0 0;
+  border-radius: 3px 3px 0 0;
+}
+.popover-content {
+  padding: 20px;
+  background-color: white;
+  -webkit-border-radius: 0 0 3px 3px;
+  -moz-border-radius: 0 0 3px 3px;
+  border-radius: 0 0 3px 3px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding-box;
+  background-clip: padding-box;
+
+}
+
 
 
 

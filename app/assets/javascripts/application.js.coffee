@@ -12,5 +12,7 @@
 #
 #= require bootstrap
 #= require jquery_ujs
+#= require components/jquery.cookie/jquery.cookie
+#= require components/bootstrap-tour/bootstrap-tour
 #= require config
 #= require_tree .

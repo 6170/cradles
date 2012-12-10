@@ -1,0 +1,9 @@
+{
+  "name": "bootstrap-tour",
+  "version": "0.0.0",
+  "commit": "2d18d04d4933ee623fdb9ec310a0ea96d7153446",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sorich87/bootstrap-tour.git"
+  }
+}

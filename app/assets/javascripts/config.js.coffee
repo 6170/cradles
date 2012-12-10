@@ -5,6 +5,7 @@ window.app =
   Views: {}
   Collections: {}
   Routers: {}
+  Tours: {}
   pubsub: _.extend {}, Backbone.Events
   log: (msg) ->
     console.log msg
