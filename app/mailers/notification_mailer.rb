@@ -4,7 +4,7 @@ class NotificationMailer < ActionMailer::Base
   	@message = message
   	@from = "no-reply@cradles.herokuapps.com"
     @recipients = @message.to     
-    @subject = "#{message.to} has sent you a message on VolunteerNet"     
+    @subject = "#{message.from} has sent you a message on VolunteerNet"     
    	@message = message
 	@sent_on = Time.now
 	@headers = {}
