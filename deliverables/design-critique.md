@@ -1,44 +1,31 @@
 ## Summary assessment from user’s perspective
 #### Positive
-- Sexy ui 
-- nested comments
-- fast
-- realtime updates
-- user accounts
+- Coverage of the usescases of the client
+- Volunteer registration makes it easy identify which schools you are availible for.
+- Email notifications make it easy to use the app (they take me directly to the page).
 
 #### Negative
-- Can be buggy
-- Adding a comment to the page resets closes the comments
-- The font and coloring choices make everything hard to read
+- No way to actually schedule recuring events
 
 ## Summary assessment from developer’s perspective
-- I tried to use mongo's embedded objects and ran into all kinds of issues
-- Ended up using references 
-- Did some really cool things with backbone.js
-- Coupling between client and backend is a REST interface which simplifies everything
-- client does most of the work
+- Clean simple code, utilizing technology such as solr.
+- Making two different models for Volunteers and Teachers allows easy separation of concerns, but makes integrating with the authentication library more difficult.
+- Code is clean with nice user of before_filters to filter actions.
 
 
 
 ## Most and least successful decisions
 ### Most
-Using a responsive ajax design as the main design idea
-The nested backbone views are cool
-runs fast
-pusher makes the realtime updates simple
-REST interface simplifies backend
-can have as many embedded comments as you want
+- Solr integration with autocomplete makes it very easy to select schools
 
 ### Least
-The errors that occur when a user isn't logged in.
-UI can make the comments hard to read
-Comments close when update occurs (view error)
+- Lack of a verified manager for each school, there is no way to verify if a school exists or if a teacher actually belongs to that school.
 
 
 ## Analysis of design faults in terms of design principles
-Didn't really intend for the app to be used by non-logged in users
-I spent too much time screwing around with mongodb and embedded objects (I learned a lot)
+- The majority of the problems occuered because of difficulty in getting a spec from the client
+- Cradle's uses case for reviewing volunteers and registering schools was not well defined, so for the sake of this class we had to come up with a reasonable alternative.
 
 ## Priorities for improvement
-1. Design for the non-logged in user's
-2. Make posts and comments easier to read
+1. Further flesh out requirements from client
+2. Make a third user type that manages schools and the teachers who belong to them.
