@@ -15,3 +15,5 @@
 /tmp
 
 /solr/pids/development/sunspot-solr-development.pid
+.DS_Store
+log/*
