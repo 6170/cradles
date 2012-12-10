@@ -15,6 +15,9 @@ class Volunteer < ActiveRecord::Base
     string :schools, :multiple => true do
       schools.map { |school| school.name }
     end
+    string :interests, :multiple => true do
+      interests.map { |interest| interest.name }
+    end
   end
 
   def set_school_list(school_list)
