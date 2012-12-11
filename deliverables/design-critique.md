@@ -12,15 +12,12 @@
 - Making two different models for Volunteers and Teachers allows easy separation of concerns, but makes integrating with the authentication library more difficult.
 - Code is clean with nice user of before_filters to filter actions.
 
-
-
 ## Most and least successful decisions
 ### Most
 - Solr integration with autocomplete makes it very easy to select schools
 
 ### Least
-- Lack of a verified manager for each school, there is no way to verify if a school exists or if a teacher actually belongs to that school.
-
+- Lack of a verified manager for each school, there is no way to verify if a school exists or if a teacher actually belongs to that school
 
 ## Analysis of design faults in terms of design principles
 - The majority of the problems occuered because of difficulty in getting a spec from the client

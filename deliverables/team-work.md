@@ -82,3 +82,4 @@ Contains All pages enumerated in the problem analysis
 ###Lessons Learned
 - Corporations work much slower than the scope of a class.
 - Also difficult to meet with a real customer when both of our schedules are so packed.
+- The majority of the work involved with this project reveolved around meeting with the client and helping them determining what their actual needs are.
