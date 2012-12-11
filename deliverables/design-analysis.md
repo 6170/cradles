@@ -21,9 +21,9 @@ Our data is represented by a few models: Teachers, Volunteers, Schools, Interest
 
 ##Key Design Choices
 Some of our key design choices were:
-1. Using a simplistic and friendly UI to create a more enjoyable user experience for users. 
-2. To create an in-app messaging/communication platform for users to connect. We made this decision because some users expressed concern about having their emails exposed and asked that we provide a buffer. Additionally the in-app messaging system allows teachers to quickly contact and then communicate with volunteers. 
-3. Geospatial representation/selection of schools. We thought that if when picking schools to volunteer at, if a volunteer was presented with a geographical breakdown of schools in Boston they'd be more likely to volunteer at more schools that are closer to them because they can see how close they are. We asked a few test subjects to create profiles and when the schools were layed out on a map they tended to pick more schools near their location. 
+1. Using a simplistic and friendly UI - to create a more enjoyable user experience for users. 
+2. To create an in-app messaging/communication platform for users to connect - We made this decision because some users expressed concern about having their emails exposed and asked that we provide a buffer. Additionally the in-app messaging system allows teachers to quickly contact and then communicate with volunteers. 
+3. Geospatial representation/selection of schools -  We thought that if when picking schools to volunteer at, if a volunteer was presented with a geographical breakdown of schools in Boston they'd be more likely to volunteer at more schools that are closer to them because they can see how close they are. We asked a few test subjects to create profiles and when the schools were layed out on a map they tended to pick more schools near their location. 
 
 4. Fast Search - The application has incredibly fast search and the results are easy to understand and interact with. We opted for a simple data model and relationship structure and it resulted in faster search and better search interface. 
 
