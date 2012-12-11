@@ -6,6 +6,7 @@ group :development, :test do
   gem 'debugger'
   gem 'sunspot_solr'
   gem 'progress_bar'
+  gem "rspec-rails"
 end
 
 gem 'pg'
@@ -33,3 +34,4 @@ gem 'sunspot_rails'
 gem 'seed_dumper'
 gem 'json'
 gem 'newrelic_rpm'
+gem 'yaml_db'
